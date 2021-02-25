@@ -8,7 +8,7 @@ Created on 2021.02.24
 TL Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+This interactive project allows the user to analyze data on bike sharing services in one of 3 cities over a period of time.
 
 ### Files used
 Include the files used
