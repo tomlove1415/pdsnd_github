@@ -11,7 +11,13 @@ TL Bikeshare Project
 This interactive project allows the user to analyze data on bike sharing services in one of 3 cities over a period of time.
 
 ### Files used
-Include the files used
+bikeshare2.py
+chicago.csv
+new_york_city.csv
+washington.csv
+Chicago.png
+New York City.png
+Washington.png
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
