@@ -2,16 +2,24 @@
 
 ### Date created
 Include the date you created this project and README file.
+Created on 2021.02.24
 
 ### Project Title
-Replace the Project Title
+TL Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+This interactive project allows the user to analyze data on bike sharing services in one of 3 cities over a period of time.
 
 ### Files used
-Include the files used
+bikeshare2.py
+# Data files
+chicago.csv
+new_york_city.csv
+washington.csv
+# Image files
+Chicago.png
+New York City.png
+Washington.png
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Credit to Udacity course for making me do this project.
