@@ -12,9 +12,11 @@ This interactive project allows the user to analyze data on bike sharing service
 
 ### Files used
 bikeshare2.py
+# Data files
 chicago.csv
 new_york_city.csv
 washington.csv
+# Image files
 Chicago.png
 New York City.png
 Washington.png
