@@ -92,6 +92,7 @@ def load_data(city, month, day):
     df['Day_of_Week'] = df['Start Time'].dt.day_name()
 
     #create filters based on user inputs
+    #data file limited to January through June data only hence limited in code
     if month != 'All':
         # use the index of the months list to get the corresponding int
         months = ['January','February','March','April','May','June']
@@ -227,7 +228,7 @@ def main():
         trip_duration_stats(df)
         display_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = input('\nWould you like to choose a different city? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
