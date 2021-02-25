@@ -20,4 +20,4 @@ New York City.png
 Washington.png
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Credit to Udacity course for making me do this project.
