@@ -1,7 +1,7 @@
 #import time and calendar library
 import time
 import calendar
-#importing pandas 
+#importing pandas
 import pandas as pd
 #importing numpy
 import numpy as np
@@ -37,7 +37,7 @@ def get_filters():
     im = Image.open(image_path)
     #show image
     im.show()
-    
+
     # get user input for month (all, january, february, ... , june)
     # \n and colors used to break up inputs visually
     month = input('\nPlease select a month for analyis: \nJanuary, February, March, April, May, June or All if you want to use all months.  \nPlease enter exactly as shown.').title()
@@ -90,7 +90,7 @@ def load_data(city, month, day):
     df['Start Hour'] = df['Start Time'].dt.hour
     #extract day of the week from Start Time column to create a Day of Week column
     df['Day_of_Week'] = df['Start Time'].dt.day_name()
-    
+
     #create filters based on user inputs
     if month != 'All':
         # use the index of the months list to get the corresponding int
@@ -101,7 +101,7 @@ def load_data(city, month, day):
     if day != 'All':
         # filter by day of week to create the new dataframe
         df = df[df['Day_of_Week'] == day.title()]
-    
+
     return df
 
 
@@ -110,7 +110,7 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
+
     # display the most common month
     common_month = df['Month'].mode() [0]
     common_month_name = calendar.month_name[common_month]
@@ -143,7 +143,7 @@ def station_stats(df):
     print('\nPeople most commonly ended their trip at: ', common_end)
 
     # display most frequent combination of start station and end station trip
-    # creat a column combining the Start Station and End Station 
+    # creat a column combining the Start Station and End Station
     df['Start Finish'] = df['Start Station'] + ' | ' + df['End Station']
     common_combo = df['Start Finish'].mode() [0]
     print('\nThe most frequent starting and ending station is: ', common_combo)
@@ -194,7 +194,7 @@ def user_stats(df):
 
 
     #Check to see if Birth Year column exists (missing for Washington csv file)
-    if 'Birth Year' in df.columns:   
+    if 'Birth Year' in df.columns:
         #Display earliest, most recent, and most common year of birth
         #Remove nan and convert to int to remove decimal point
         df.dropna(subset=['Birth Year'])
@@ -202,9 +202,9 @@ def user_stats(df):
         birth_latest = int(df['Birth Year'].max())
         birth_most = int(df['Birth Year'].mode() [0])
         print('\nThe earliest birth year of a rider is : ', birth_earliest)
-        print('\nThe most recent birth year of a rider is : ', birth_latest)   
+        print('\nThe most recent birth year of a rider is : ', birth_latest)
         print('\nThe most common birth year of a rider is : ', birth_most)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -215,16 +215,16 @@ def display_data(df):
         print(df.iloc[start_loc:start_loc + 5])
         start_loc += 5
         view_data = input('Do you wish to see 5 more rows of data? Enter yes or no').lower()
-    
+
 def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
         user_stats(df)
+        station_stats(df)
+        time_stats(df)
+        trip_duration_stats(df)
         display_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
